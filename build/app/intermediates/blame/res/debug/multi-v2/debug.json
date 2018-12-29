@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/4machupp/Documents/flutter_test/testproject/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/Users/4machupp/Documents/git/flutter/flutter-food-app/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/4machupp/Documents/flutter_test/testproject/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
