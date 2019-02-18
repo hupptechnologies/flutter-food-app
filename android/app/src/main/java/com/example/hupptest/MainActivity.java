@@ -1,4 +1,4 @@
-package com.example.testproject;
+package com.example.hupptest;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

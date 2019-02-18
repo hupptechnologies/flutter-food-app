@@ -1,11 +1,10 @@
 import 'dart:async';
 
-abstract class BaseBloc{
+abstract class BaseBloc {
   void dispose();
 }
 
-class Bloc implements BaseBloc{
-
+class Bloc implements BaseBloc {
   int counter;
 
   // Counter Stream
@@ -17,31 +16,29 @@ class Bloc implements BaseBloc{
   // Output counterStream
   Stream<int> get outCounter => counterStream.stream;
 
-
   //
   // Stream to handle the action on the counter
   //
   StreamController _actionController = StreamController();
+
   StreamSink get incrementCounter => _actionController.sink;
 
   StreamController _actionDecrement = StreamController();
+
   StreamSink get decrementCounter => _actionDecrement.sink;
 
-
-
-  Bloc(){
+  Bloc() {
     counter = 0;
     _actionController.stream.listen(_handleLogic);
     _actionDecrement.stream.listen(_handleLogic);
   }
 
-  _handleLogic(a){
-      if(a == 'add'){
-        _inAdd.add(++counter);
-      }else{
-        _inAdd.add(--counter);
-      }
-
+  _handleLogic(a) {
+    if (a == 'add') {
+      _inAdd.add(++counter);
+    } else {
+      _inAdd.add(--counter);
+    }
   }
 
   @override
@@ -50,5 +47,4 @@ class Bloc implements BaseBloc{
     counterStream.close();
     _actionController.close();
   }
-
 }

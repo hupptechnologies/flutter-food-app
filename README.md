@@ -3,8 +3,12 @@
 
 
 ### Features
-    - Signup
-    - Login
+    - Signup with firebase
+    - Login with firebase
+
+
+### Run project
+    - Create firebase project & add `google-services.json` file in `android/app` folder.
 
 
 ## Preview

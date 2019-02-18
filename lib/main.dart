@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'Home/Home.dart';
-import 'Signup/Signup.dart';
-import 'Login/Login.dart';
+import 'View/Home/Home.dart';
+import 'View/Signup/Signup.dart';
+import 'View/Login/Login.dart';
+import 'View/Root.dart';
 
-void main(){
+void main() {
   runApp(MainPage());
 }
 
-class MainPage extends StatelessWidget{
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
       title: "Foody",
-      home: Home(),
+      home: Root(),
       debugShowCheckedModeBanner: false,
+      routes: <String, WidgetBuilder>{'/root': (context) => Root()},
     );
   }
 }
-
-
