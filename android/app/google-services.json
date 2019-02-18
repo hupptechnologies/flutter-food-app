@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1028952192599",
+    "firebase_url": "https://offthemark.firebaseio.com",
+    "project_id": "offthemark",
+    "storage_bucket": "offthemark.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028952192599:android:3827ff493ca0a507",
+        "android_client_info": {
+          "package_name": "com.example.hupptest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028952192599-eiit5s55siecm4020ler3mqvv5cmgj5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1mOqkeO1cQm960vxtIdwV3QnJNWO2Ug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028952192599:android:47be1a7bd770c4f9",
+        "android_client_info": {
+          "package_name": "com.hupp.tectnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028952192599-eiit5s55siecm4020ler3mqvv5cmgj5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1mOqkeO1cQm960vxtIdwV3QnJNWO2Ug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

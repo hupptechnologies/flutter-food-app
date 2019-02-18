@@ -8,7 +8,7 @@ INJECTED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app
 INJECTED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:1:1-39:12
 INJECTED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:1:1-39:12
 	package
-		ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:2:5-38
+		ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:2:5-35
 		INJECTED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -33,7 +33,7 @@ ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/sr
 		ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:18:9-43
 	android:name
 		ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:16:9-57
-activity#com.example.testproject.MainActivity
+activity#com.example.hupptest.MainActivity
 ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:19:9-37:20
 	android:launchMode
 		ADDED from /Users/4machupp/Documents/git/flutter/flutter-food-app/android/app/src/main/AndroidManifest.xml:21:13-43

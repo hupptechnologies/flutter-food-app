@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../Widgets/CustomButton.dart';
 import '../Login/Login.dart';
 import '../Signup/Signup.dart';
-
+import 'dart:async';
+import '../Bloc/Bloc.dart';
 
 class Home extends StatelessWidget{
   @override
@@ -10,13 +11,16 @@ class Home extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       body: Column(
+
         children: <Widget>[
           Expanded(
-            child: Image.network("https://media3.s-nbcnews.com/j/streams/2014/October/141002/2D274906915359-today-plates-14101-tease.fit-760w.jpg",fit: BoxFit.cover,),
+            child: Image.asset("pictures/images/foody.jpg",fit: BoxFit.cover,),
           ),
           SizedBox(height: 20.0,),
           Container(
+            width: MediaQuery.of(context).size.width,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(("Foodsy").toUpperCase(),style: TextStyle(fontSize: 30.0),),
                 SizedBox(height: 15.0,),
@@ -42,3 +46,58 @@ class Home extends StatelessWidget{
     );
   }
 }
+
+//class Home extends StatefulWidget{
+//  @override
+//  State<StatefulWidget> createState() {
+//    // TODO: implement createState
+//    return HomeState();
+//  }
+//}
+//
+//class HomeState extends State<Home>{
+//
+////  final counterStream = StreamController<int>();
+////  int counter = 0;
+//
+//  final _bloc = Bloc();
+//
+//
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//    return Scaffold(
+//      body: Center(
+//        child: Container(
+//          child: StreamBuilder(
+//            initialData: 0,
+//            builder: (BuildContext context, AsyncSnapshot<int> snapshot){
+//              return Text(snapshot.data.toString());
+//            },
+//            stream: _bloc.outCounter,
+//          ),
+//        ),
+//      ),
+//      floatingActionButton: Row(
+//        children: <Widget>[
+//          FloatingActionButton(
+//            onPressed: (){
+//              print("Called press");
+//
+//              _bloc.incrementCounter.add('add');
+//            },
+//            child: Icon(Icons.add),
+//          ),
+//          FloatingActionButton(
+//            onPressed: (){
+//              print("Called press");
+//
+//              _bloc.decrementCounter.add(null);
+//            },
+//            child: Icon(Icons.mic),
+//          ),
+//        ],
+//      )
+//    );
+//  }
+//}
