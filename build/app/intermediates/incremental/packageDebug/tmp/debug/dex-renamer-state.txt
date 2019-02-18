@@ -1,4 +1,0 @@
-#Mon Feb 18 11:23:33 IST 2019
-base.0=/Users/4machupp/Documents/git/flutter/flutter-food-app/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
