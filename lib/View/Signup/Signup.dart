@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../Widgets/PageHeader.dart';
 import '../../Widgets/CustomButton.dart';
 import '../../Widgets/FormInputDecoration.dart';
-import '../../Bloc/UserBloc.dart';
 import '../../Modal/Validation.dart';
 import '../../Widgets/Loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,7 +28,6 @@ class SignupState extends State<Signup> {
   bool _autoValid = false;
   bool loader = false;
 
-  final _userBloc = UserBloc();
 
   @override
   void initState() {
