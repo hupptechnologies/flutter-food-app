@@ -5,6 +5,8 @@
 ### Features
     - Signup with firebase
     - Login with firebase
+    - Resturant List view
+    - Resturant Detail view
 
 
 ### Run project
