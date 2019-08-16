@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ResturantDetail extends StatefulWidget{
-
   int index;
   String image;
 
