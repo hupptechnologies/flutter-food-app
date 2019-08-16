@@ -21,7 +21,7 @@ class ResturantListView extends StatelessWidget{
               onTap: (){
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ResturantDetail(index: index,image: image,),
+                    MaterialPageRoute(builder: (context) => ResturantDetail(index: index,image: image,title: "Title From",),
                     ),
                 );
               },
