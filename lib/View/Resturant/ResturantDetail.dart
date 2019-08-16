@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:testproject/Theme/Color.dart';
+import 'package:testproject/Theme/CustomTextStyle.dart';
+import 'package:testproject/View/Resturant/MenuView.dart';
+import 'package:testproject/View/Resturant/PlaceDetailsView.dart';
+import 'package:testproject/View/Resturant/PlaceReviewView.dart';
 
 class ResturantDetail extends StatefulWidget{
   int index;
@@ -45,49 +50,71 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
       body: Column(
         children: <Widget>[
           Container(
+            padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
             child: Hero(
               tag: widget.index,
               child: Image.network(widget.image),
             )
           ),
-          Expanded(
-            child: Column(
-              children: <Widget>[
-                TabBar(
-                  controller: tabController,
-                  tabs: <Widget>[
-                    Tab(
-                      child: Text("Food menu"),
-                    ),
-                    Tab(
-                      child: Text("Place detail"),
-                    ),
-                    Tab(
-                      child: Text("Place review"),
-                    )
-                  ],
-                ),
-                Expanded(
-                  child: TabBarView(
-                    controller: tabController,
-                    children: <Widget>[
-                      Center(
-                        child: Text("MENU"),
-                      ),
-                      Center(
-                        child: Text("Details"),
-                      ),
-                      Center(
-                        child: Text("Revuiew"),
-                      )
-                    ],
-                  ),
-                )
-              ],
+          OutlineButton(
+              onPressed: (){
+
+              },
+              highlightedBorderColor: primaryColor,
+              borderSide: BorderSide(color: primaryColor),
+              color: primaryColor,
+              child: Text("Redy in 25Min"),
             ),
+          Expanded(
+            child: DetailTabView(tabController: tabController,),
           )
         ],
       )
+    );
+  }
+}
+
+class DetailTabView extends StatelessWidget{
+  TabController tabController;
+
+  DetailTabView({this.tabController});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        TabBar(
+          indicator: UnderlineTabIndicator(
+            borderSide: BorderSide.none
+          ),
+          labelStyle: TextStyle(color: primaryColor),
+          unselectedLabelColor: greyColor,
+          labelColor: primaryColor,
+          controller: tabController,
+          tabs: <Widget>[
+            Tab(
+              child: Text(toUpper("Food menu"),style: detailsTabTitle(),),
+            ),
+            Tab(
+              child: Text(toUpper("Place detail"),style: detailsTabTitle(),),
+            ),
+            Tab(
+              child: Text(toUpper("Place review"),style: detailsTabTitle(),),
+            )
+          ],
+        ),
+        Expanded(
+          child: TabBarView(
+            controller: tabController,
+            children: <Widget>[
+              MenuView(),
+              PlaceDetailView(),
+              PlaceReviewView()
+            ],
+          ),
+        )
+      ],
     );
   }
 }
