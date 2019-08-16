@@ -1,8 +1,7 @@
 
 # google service file
 android/app/google-services.json
-
-
+**/GoogleService-Info.*
 
 # Miscellaneous
 *.class
@@ -84,6 +83,7 @@ unlinked_spec.ds
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Runner/GoogleService-Info.*
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3

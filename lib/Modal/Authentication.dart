@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'dart:io';
 
 class Authentication {
-  Future<FirebaseUser> SingupUser(User user) async {
-    return await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: user.email, password: user.password);
+  Future<AuthResult> SingupUser(User user) async {
+
+    return await FirebaseAuth.instance.createUserWithEmailAndPassword(email: user.email, password: user.password);
   }
 
-  Future<FirebaseUser> LoginUser(User user) async {
+  Future<AuthResult> LoginUser(User user) async {
     return await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: user.email, password: user.password);
   }

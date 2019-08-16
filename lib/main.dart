@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'View/Home/Home.dart';
-import 'View/Signup/Signup.dart';
-import 'View/Login/Login.dart';
-import 'View/Root.dart';
+import 'package:testproject/Theme/Color.dart';
+import 'package:testproject/View/Root.dart';
 
 void main() {
   runApp(MainPage());
@@ -13,6 +11,22 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: "RalewatMedium",
+        primaryColor: primaryColor,
+        primaryIconTheme: IconThemeData(
+          color: Colors.white
+        ),
+        primaryTextTheme: TextTheme(
+          title: TextStyle(
+            color: Colors.white
+          ),
+
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: primaryColor
+        )
+      ),
       title: "Foody",
       home: Root(),
       debugShowCheckedModeBanner: false,

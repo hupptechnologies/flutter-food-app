@@ -50,9 +50,9 @@ class LoginState extends State<Login> {
         loader = true;
       });
       User u =
-          User(email: emailCtrl.value.text, password: passwordCtrl.value.text);
+          User(email: emailCtrl.value.text, password: passwordCtrl.value.text,);
       try {
-        FirebaseUser _user = await _authentication.LoginUser(u);
+        AuthResult _user = await _authentication.LoginUser(u);
         setState(() {
           loader = false;
         });
@@ -61,7 +61,7 @@ class LoginState extends State<Login> {
               context,
               MaterialPageRoute(
                   builder: (BuildContext context) => Welcome(
-                        user: _user,
+                        user: _user.user,
                       )),
               ModalRoute.withName('/root'));
         }

@@ -21,19 +21,25 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return FlatButton(
-        padding: EdgeInsets.all(0.0),
-        onPressed: onPressed,
-        child: Container(
-          width: (width != null ? width : double.infinity),
-          height: 45.0,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: color, borderRadius: BorderRadius.circular(22.5)),
-          child: Text(
-            (text).toUpperCase(),
-            style: TextStyle(
-                fontSize: 15.0, color: Colors.white, letterSpacing: 0.0),
-          ),
-        ));
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(22.0),
+      ),
+      padding: EdgeInsets.all(0.0),
+      onPressed: onPressed,
+      child: Container(
+        width: (width != null ? width : double.infinity),
+        height: 45.0,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(22.0),
+        ),
+        child: Text(
+          (text).toUpperCase(),
+          style: TextStyle(
+              fontSize: 15.0, color: Colors.white, letterSpacing: 0.0),
+        ),
+      ),
+    );
   }
 }

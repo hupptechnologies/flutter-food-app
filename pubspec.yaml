@@ -19,7 +19,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  firebase_auth: 0.7.0
+  firebase_auth: ^0.14.0+1
 
 
 dev_dependencies:
@@ -53,11 +53,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+     - family: Raleway
+       fonts:
+         - asset: font/Raleway-Black.ttf
+     - family: RalewayLight
+       fonts:
+         - asset: font/Raleway-Light.ttf
+     - family: RalewatMedium
+       fonts:
+         - asset: font/Raleway-Medium.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

@@ -78,14 +78,14 @@ class SignupState extends State<Signup> {
         print("SUCCESS");
         User u = User(
             email: emailCtrl.value.text, password: passwordCtrl.value.text);
-        FirebaseUser _user = await _authentication.SingupUser(u);
+        AuthResult _user = await _authentication.SingupUser(u);
         print(_user);
         if (_user != null) {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
                 builder: (BuildContext context) => Welcome(
-                      user: _user,
+                      user:_user.user,
                     ),
               ),
               ModalRoute.withName('/root'));
