@@ -4,6 +4,7 @@ import 'package:testproject/Theme/CustomTextStyle.dart';
 import 'package:testproject/View/Resturant/MenuView.dart';
 import 'package:testproject/View/Resturant/PlaceDetailsView.dart';
 import 'package:testproject/View/Resturant/PlaceReviewView.dart';
+import 'package:testproject/Widgets/CustomOutlineButton.dart';
 
 class ResturantDetail extends StatefulWidget{
   int index;
@@ -56,14 +57,14 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
               child: Image.network(widget.image),
             )
           ),
-          OutlineButton(
+          CustomOutlineButton(
               onPressed: (){
 
               },
-              highlightedBorderColor: primaryColor,
-              borderSide: BorderSide(color: primaryColor),
-              color: primaryColor,
-              child: Text("Redy in 25Min"),
+              textStyle: resturantListButton(),
+              highlightColor: primaryColor,
+              borderColor: primaryColor,
+              text: "Ready in 20Min",
             ),
           Expanded(
             child: DetailTabView(tabController: tabController,),

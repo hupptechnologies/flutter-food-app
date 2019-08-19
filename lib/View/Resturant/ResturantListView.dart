@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testproject/Theme/Color.dart';
 import 'package:testproject/Theme/CustomTextStyle.dart';
 import 'package:testproject/View/Resturant/ResturantDetail.dart';
+import 'package:testproject/Widgets/CustomOutlineButton.dart';
 
 
 String image = 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
@@ -56,17 +57,16 @@ class TextSection extends StatelessWidget{
           ),
         ),
         Container(
-          child: OutlineButton(
-            color: primaryColor,
-            borderSide: BorderSide(color: primaryColor),
-            onPressed: (){
+          child: CustomOutlineButton(
+          onPressed: (){
 
-            },
-            highlightedBorderColor: primaryColor,
-            highlightColor: primaryColor.withOpacity(0.2),
-            child: Text("Ready in 25Min",style: resturantListButton()),
+          },
+          textStyle: resturantListButton(),
+          highlightColor: primaryColor,
+          borderColor: primaryColor,
+          text: "Ready in 20Min",
           ),
-        )
+        ),
       ],
     );
   }

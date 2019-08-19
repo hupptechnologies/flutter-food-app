@@ -15,7 +15,7 @@ TextStyle resturantListSwitchText(bool active){
 TextStyle resturantListButton(){
   return TextStyle(
       color: primaryColor,
-      fontSize: normalText-4
+      fontSize: normalText-3
   );
 }
 
