@@ -61,7 +61,8 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
               onPressed: (){
 
               },
-              textStyle: resturantListButton(),
+              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+              textStyle: resturantListButton().copyWith(fontSize: 16.0),
               highlightColor: primaryColor,
               borderColor: primaryColor,
               text: "Ready in 20Min",

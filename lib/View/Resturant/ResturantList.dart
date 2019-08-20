@@ -177,7 +177,7 @@ class ResturantListState extends State<ResturantList> with SingleTickerProviderS
   }
   ///
   /// Blur widget while open filter
-  /// 
+  ///
   getBlurWidget(){
     return (animation.value > 0) ? BackdropFilter(
       filter: ui.ImageFilter.blur(

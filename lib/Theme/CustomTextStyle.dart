@@ -15,7 +15,7 @@ TextStyle resturantListSwitchText(bool active){
 TextStyle resturantListButton(){
   return TextStyle(
       color: primaryColor,
-      fontSize: normalText-3
+      fontSize: normalText-2
   );
 }
 
@@ -38,6 +38,7 @@ TextStyle resturantListSubTitleText(){
 
 TextStyle detailsTabTitle(){
   return TextStyle(
+    fontSize: normalText-2,
     fontWeight: FontWeight.w500
   );
 }

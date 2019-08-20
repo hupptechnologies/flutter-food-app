@@ -8,8 +8,8 @@ class CustomOutlineButton extends StatelessWidget{
   Color highlightColor;
   Color borderColor;
   TextStyle textStyle = TextStyle();
-
-  CustomOutlineButton({this.onPressed,this.text,this.highlightColor,this.borderColor,this.textStyle});
+  EdgeInsets padding = null;
+  CustomOutlineButton({this.onPressed,this.text,this.highlightColor,this.borderColor,this.textStyle,this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,7 @@ class CustomOutlineButton extends StatelessWidget{
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.0)
       ),
+      padding: padding,
       textColor: primaryColor,
       highlightedBorderColor: primaryColor,
       borderSide: BorderSide(color: borderColor)
