@@ -61,7 +61,7 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
               onPressed: (){
 
               },
-              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
               textStyle: resturantListButton().copyWith(fontSize: 16.0),
               highlightColor: primaryColor,
               borderColor: primaryColor,
@@ -86,25 +86,28 @@ class DetailTabView extends StatelessWidget{
     // TODO: implement build
     return Column(
       children: <Widget>[
-        TabBar(
-          indicator: UnderlineTabIndicator(
-            borderSide: BorderSide.none
+        Container(
+          child: TabBar(
+            indicator: UnderlineTabIndicator(
+                borderSide: BorderSide.none
+            ),
+            labelStyle: TextStyle(color: primaryColor),
+            unselectedLabelColor: greyColor,
+            labelColor: primaryColor,
+            controller: tabController,
+            tabs: <Widget>[
+              Tab(
+                child: Text(toUpper("Food menu"),style: detailsTabTitle(),),
+              ),
+              Tab(
+                child: Text(toUpper("Place detail"),style: detailsTabTitle(),),
+              ),
+              Tab(
+                child: Text(toUpper("Place review"),style: detailsTabTitle(),),
+              )
+            ],
           ),
-          labelStyle: TextStyle(color: primaryColor),
-          unselectedLabelColor: greyColor,
-          labelColor: primaryColor,
-          controller: tabController,
-          tabs: <Widget>[
-            Tab(
-              child: Text(toUpper("Food menu"),style: detailsTabTitle(),),
-            ),
-            Tab(
-              child: Text(toUpper("Place detail"),style: detailsTabTitle(),),
-            ),
-            Tab(
-              child: Text(toUpper("Place review"),style: detailsTabTitle(),),
-            )
-          ],
+          color: Colors.white,
         ),
         Expanded(
           child: TabBarView(

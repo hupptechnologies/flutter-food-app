@@ -143,6 +143,10 @@ class ResturantListState extends State<ResturantList> with SingleTickerProviderS
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text("Filters",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w600),),
                     ),
+                      Container(
+                      decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: Colors.grey[200]))),
+                      ),
                     Expanded(
                       child: Container(
                         child: Wrap(

@@ -20,7 +20,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   firebase_auth: ^0.14.0+1
-
+  rating_bar: 
 
 dev_dependencies:
   flutter_test:

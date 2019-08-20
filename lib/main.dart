@@ -17,6 +17,7 @@ class MainPage extends StatelessWidget {
         primaryIconTheme: IconThemeData(
           color: Colors.white
         ),
+        primarySwatch: Colors.green,
         primaryTextTheme: TextTheme(
           title: TextStyle(
             color: Colors.white
