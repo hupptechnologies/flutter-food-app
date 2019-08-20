@@ -179,13 +179,22 @@ class ResturantListState extends State<ResturantList> with SingleTickerProviderS
   /// Blur widget while open filter
   ///
   getBlurWidget(){
-    return (animation.value > 0) ? BackdropFilter(
-      filter: ui.ImageFilter.blur(
-        sigmaX: 5.0,
-        sigmaY: 5.0,
-      ),
-      child: Container(
-        color: Colors.transparent,
+    return (animation.value > 0) ? GestureDetector(
+      onTap: (){
+        print("TAP OUT SIDE");
+        animationController.reverse();
+        setState(() {
+          fromBottom = 0;
+        });
+      },
+      child: BackdropFilter(
+        filter: ui.ImageFilter.blur(
+          sigmaX: 5.0,
+          sigmaY: 5.0,
+        ),
+        child: Container(
+          color: Colors.transparent,
+        ),
       ),
     ) : Container();
   }
