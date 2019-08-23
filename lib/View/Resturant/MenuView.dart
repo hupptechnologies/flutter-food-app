@@ -19,15 +19,15 @@ class MenuView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      height: 80.0,
-                      width: 90.0,
+                      height: 70.0,
+                      width: 80.0,
                       padding: EdgeInsets.only(left: 10.0),
                       child: Image.network("https://media.graytvinc.com/images/810*455/FAST+FOOD+MGN.jpg",fit: BoxFit.fitHeight,),
                     ),
                     Expanded(
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 15.0,horizontal: 10.0),
-                          height: 100.0,
+                          height: 90.0,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,7 +38,7 @@ class MenuView extends StatelessWidget {
                                     child: Text(
                                       "Wayback Burger",
                                       style: TextStyle(
-                                          fontSize: 18.0, fontWeight: FontWeight.w500),
+                                          fontSize: 16.0, fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                   Text(
@@ -53,6 +53,7 @@ class MenuView extends StatelessWidget {
                               Text(
                                 "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs",
                                 maxLines: 2,
+                                style: TextStyle(fontSize: 13),
                               )
                             ],
                           ),

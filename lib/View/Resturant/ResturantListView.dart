@@ -17,6 +17,7 @@ class ResturantListView extends StatelessWidget{
         double height = constraint.biggest.height;
         double width = constraint.biggest.width;
         return ListView.separated(
+          key: PageStorageKey("list_data"),
           itemBuilder: (context,index){
             return GestureDetector(
               onTap: (){

@@ -14,7 +14,7 @@ class ResturantList extends StatefulWidget{
   }
 }
 
-class ResturantListState extends State<ResturantList> with SingleTickerProviderStateMixin{
+class ResturantListState extends State<ResturantList> with TickerProviderStateMixin{
 
 
   int activeView = 0;
@@ -23,11 +23,14 @@ class ResturantListState extends State<ResturantList> with SingleTickerProviderS
   Animation animation;
   AnimationController animationController;
   Animation offset;
+  TabController tabController;
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    tabController = TabController(vsync: this,length: 2,initialIndex: 0);
     animationController = AnimationController(vsync: this,duration: Duration(milliseconds: 200));
     animation = Tween<double>(begin: 0.0,end: 250.0)
                 .animate(CurvedAnimation(parent: animationController,curve: Curves.ease));
@@ -54,49 +57,34 @@ class ResturantListState extends State<ResturantList> with SingleTickerProviderS
         children: <Widget>[
           Column(
             children: <Widget>[
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        if(activeView == 0){
-                          return;
-                        }
-                        setState(() {
-                          activeView = 0;
-                        });
-                      },
-                      child: Padding(
-                        padding: padding,
-                        child: Text("Resturant List".toUpperCase(),style: resturantListSwitchText(activeView == 0 ? true : false),),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        if(activeView == 1){
-                          return;
-                        }
-                        setState(() {
-                          activeView = 1;
-                        });
-                      },
-                      child: Padding(
-                          padding: padding,
-                          child: Text("Resturant Map".toUpperCase(),style: resturantListSwitchText(activeView == 1 ? true : false),)
-                      ),
-                    ),
-                  ],
-                ),
+              TabBar(
+                controller: tabController,
+                indicatorColor: Colors.transparent,
+                isScrollable: false,
+                unselectedLabelColor: greyColor,
+                labelColor: primaryColor,
+                tabs: <Widget>[
+                  Tab(
+                    child: Text("Resturant List"),
+                  ),
+                  Tab(
+                    child: Text("Resturant Map"),
+                  )
+                ],
               ),
               Expanded(
-                child: Container(
-                    child: activeView == 0 ? ResturantListView() : ResturantMapView()
+                child: TabBarView(
+                  controller: tabController,
+                  children: <Widget>[
+                    ResturantListView(),
+                    ResturantMapView()
+                  ],
                 ),
               )
+
             ],
           ),
-        getBlurWidget(),
+         getBlurWidget(),
          Positioned(
             bottom: animation.value,
             child: Align(

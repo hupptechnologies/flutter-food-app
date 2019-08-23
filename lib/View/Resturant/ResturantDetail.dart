@@ -51,7 +51,8 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
+            height: MediaQuery.of(context).size.height/3.5,
+            padding: EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
             child: Hero(
               tag: widget.index,
               child: Image.network(widget.image),
@@ -61,7 +62,7 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
               onPressed: (){
 
               },
-              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 5.0),
               textStyle: resturantListButton().copyWith(fontSize: 16.0),
               highlightColor: primaryColor,
               borderColor: primaryColor,

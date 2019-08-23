@@ -15,7 +15,7 @@ class CustomRatingBar extends StatelessWidget{
       filledColor: Colors.amberAccent,
       maxRating: 5,
       onRatingChanged: (val){},
-      size: 30,
+      size: 20,
       initialRating: size,
     );
   }

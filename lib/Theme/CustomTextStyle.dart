@@ -38,7 +38,7 @@ TextStyle resturantListSubTitleText(){
 
 TextStyle detailsTabTitle(){
   return TextStyle(
-    fontSize: normalText-2,
+    fontSize: normalText-4,
     fontWeight: FontWeight.w500
   );
 }
