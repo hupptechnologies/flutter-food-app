@@ -47,3 +47,4 @@ app.*.map.json
 
 
 *GoogleService-Info.plist*
+*google-services.json*
