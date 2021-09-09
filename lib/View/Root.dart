@@ -23,7 +23,8 @@ class RootState extends State<Root> {
 
   checkUser() async {
     try {
-      FirebaseUser user = await FirebaseAuth.instance.currentUser();
+      User? user = FirebaseAuth.instance.currentUser;
+      print(user);
       if (user != null) {
         setState(() {
           launchWidget = Welcome(
@@ -36,7 +37,7 @@ class RootState extends State<Root> {
         });
       }
     } catch (e) {
-      print("ERROR IN LAUNCH ${e.message}");
+      print("ERROR IN LAUNCH $e");
     }
   }
 
@@ -44,6 +45,5 @@ class RootState extends State<Root> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(body: launchWidget);
-    ;
   }
 }

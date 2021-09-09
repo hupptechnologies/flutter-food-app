@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:testproject/View/Resturant/ResturantList.dart';
-import 'package:testproject/View/Home/Home.dart';
-import 'package:testproject/Theme/Color.dart';
+import 'package:hupptest/Theme/Color.dart';
+import 'package:hupptest/View/Home/Home.dart';
+import 'package:hupptest/View/Resturant/ResturantList.dart';
 
 class Welcome extends StatelessWidget {
-  FirebaseUser user;
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final User? user;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   Welcome({this.user});
 
-  logout(BuildContext context) async {
+  logout(BuildContext? context) async {
     try {
       await FirebaseAuth.instance.signOut();
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Home()));
+      if(context != null) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Home()));
+      }
     } catch (e) {}
   }
 
@@ -22,10 +24,10 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      key: _scaffoldKey,
+      key: scaffoldKey,
       appBar: AppBar(
         elevation: 0.0,
-        title: Text("Resturant Nearby"),
+        title: Text("Restaurant Nearby"),
         backgroundColor: primaryColor,
         actions: <Widget>[
           InkResponse(
@@ -85,11 +87,11 @@ class Welcome extends StatelessWidget {
     );
   }
 
-  Widget drawerList({String name,IconData icon,bool active,String id}){
+  Widget drawerList({required String name,required IconData icon,required bool active,required String id}){
       return InkWell(
         onTap: (){
           if(id == "LOGOUT"){
-            logout(_scaffoldKey.currentContext);
+            logout(scaffoldKey.currentContext);
           }
         },
         child: Padding(

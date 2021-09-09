@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PageHeader extends StatelessWidget {
-  String title;
+  final String title;
 
-  PageHeader({@required this.title});
+  PageHeader({required this.title});
 
   @override
   Widget build(BuildContext context) {

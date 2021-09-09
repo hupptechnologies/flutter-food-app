@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:testproject/Widgets/CustomDivider.dart';
-import 'package:testproject/Widgets/CustomRatingBar.dart';
+import 'package:hupptest/Widgets/CustomDivider.dart';
+import 'package:hupptest/Widgets/CustomRatingBar.dart';
 
 class PlaceReviewView extends StatelessWidget{
   @override
@@ -11,7 +11,7 @@ class PlaceReviewView extends StatelessWidget{
       child:  Column(
         children: <Widget>[
           CustomDivider(
-            color: Colors.grey[200],
+            color: Colors.grey.withOpacity(0.5)
           ),
            Container(
             color: Colors.white,
@@ -27,7 +27,7 @@ class PlaceReviewView extends StatelessWidget{
             ),
           ),
           CustomDivider(
-            color: Colors.grey[200],
+            color: Colors.grey.withOpacity(0.5)
           ),
           Expanded(
             child: Container(

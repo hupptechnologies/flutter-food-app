@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
+import 'package:hupptest/Theme/Color.dart';
 
 class MenuView extends StatelessWidget {
   @override
@@ -22,7 +22,7 @@ class MenuView extends StatelessWidget {
                       height: 70.0,
                       width: 80.0,
                       padding: EdgeInsets.only(left: 10.0),
-                      child: Image.network("https://media.graytvinc.com/images/810*455/FAST+FOOD+MGN.jpg",fit: BoxFit.fitHeight,),
+                      child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU",fit: BoxFit.fitHeight,),
                     ),
                     Expanded(
                         child: Container(

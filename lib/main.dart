@@ -1,8 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
-import 'package:testproject/View/Root.dart';
 
-void main() {
+import 'Theme/Color.dart';
+import 'View/Root.dart';
+
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MainPage());
 }
 
@@ -19,8 +24,8 @@ class MainPage extends StatelessWidget {
         ),
         primarySwatch: Colors.green,
         primaryTextTheme: TextTheme(
-          title: TextStyle(
-            color: Colors.white
+          headline6: TextStyle(
+              color: Colors.white
           ),
 
         ),

@@ -1,16 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'User.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:io';
 
 class Authentication {
-  Future<AuthResult> SingupUser(User user) async {
+  Future<UserCredential> SingupUser(UserModel user) async {
 
     return await FirebaseAuth.instance.createUserWithEmailAndPassword(email: user.email, password: user.password);
   }
 
-  Future<AuthResult> LoginUser(User user) async {
+  Future<UserCredential> LoginUser(UserModel user) async {
     return await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: user.email, password: user.password);
   }
@@ -20,11 +19,11 @@ class Authentication {
   }
 
   ShowToast(BuildContext context, String message) {
-    Scaffold.of(context).showSnackBar(new SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context).showSnackBar(new SnackBar(content: Text(message)));
   }
 
   HandleError(e) {
-    String errorType;
+    String? errorType;
 
     if (Platform.isAndroid) {
       switch (e.message) {

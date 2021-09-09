@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
 
-class CustomOutlineButton extends StatelessWidget{
+class CustomOutlineButton extends StatelessWidget {
+  final GestureTapCallback? onPressed;
+  final String text;
+  final Color? highlightColor;
+  final Color borderColor;
+  final TextStyle? textStyle;
+  final EdgeInsets? padding;
 
-  GestureTapCallback onPressed;
-  String text;
-  Color highlightColor;
-  Color borderColor;
-  TextStyle textStyle = TextStyle();
-  EdgeInsets padding = null;
-  CustomOutlineButton({this.onPressed,this.text,this.highlightColor,this.borderColor,this.textStyle,this.padding});
+  CustomOutlineButton(
+      {this.onPressed,
+      required this.text,
+      this.highlightColor,
+      required this.borderColor,
+      this.textStyle,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return OutlineButton(
+    return OutlinedButton(
       onPressed: onPressed,
-      child: Text(text,style: textStyle,),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0)
+      style: OutlinedButton.styleFrom(
+          padding: padding,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          side: BorderSide(color: borderColor)),
+      child: Text(
+        text,
+        style: textStyle,
       ),
-      padding: padding,
-      textColor: primaryColor,
-      highlightedBorderColor: primaryColor,
-      borderSide: BorderSide(color: borderColor)
     );
   }
 }

@@ -5,7 +5,7 @@ class PlaceDetailView extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: Text("Place Detail VUEW"),
+      child: Text("Place Detail View"),
     );
   }
 }
