@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
-import 'package:testproject/Theme/CustomTextStyle.dart';
-import 'package:testproject/View/Resturant/ResturantDetail.dart';
-import 'package:testproject/Widgets/CustomOutlineButton.dart';
+import 'package:hupptest/Theme/Color.dart';
+import 'package:hupptest/Theme/CustomTextStyle.dart';
+import 'package:hupptest/Widgets/CustomOutlineButton.dart';
+
+import 'ResturantDetail.dart';
 
 
 String image = 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
@@ -75,10 +76,10 @@ class TextSection extends StatelessWidget{
 
 class ResturantListItem extends StatelessWidget{
 
-  double height;
-  double width;
-  int index;
-  ResturantListItem({this.width,this.height,this.index});
+  final double height;
+  final double width;
+  final int index;
+  ResturantListItem({required this.width,required this.height,required this.index});
 
   @override
   Widget build(BuildContext context) {

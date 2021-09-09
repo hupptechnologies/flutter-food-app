@@ -6,16 +6,16 @@ import 'package:flutter/material.dart';
  *  @param width  - double datatype  : Button width   ( default full width )
  * */
 class CustomButton extends StatelessWidget {
-  String text;
-  Color color;
-  GestureTapCallback onPressed;
-  double width = null;
+  final String text;
+  final Color color;
+  final GestureTapCallback onPressed;
+  final double? width;
 
   CustomButton(
-      {@required this.text,
-      @required this.color,
+      {required this.text,
+      required this.color,
       this.width,
-      @required this.onPressed});
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

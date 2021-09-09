@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:hupptest/Modal/User.dart';
 import '../../Widgets/PageHeader.dart';
 import '../../Widgets/CustomButton.dart';
 import '../../Widgets/FormInputDecoration.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
-import 'dart:io';
 import '../../Widgets/Loader.dart';
 import '../../Modal/Validation.dart';
-import '../../Modal/User.dart';
 import '../Welcome/Welcome.dart';
 import '../../Modal/Authentication.dart';
 
 class Login extends StatefulWidget {
-  VoidCallback UpdateLoginState;
-
-  Login({Key key, this.UpdateLoginState});
-
   createState() => LoginState();
 }
 
 class LoginState extends State<Login> {
-  Authentication _authentication;
-  FocusNode email;
-  FocusNode password;
-  TextEditingController emailCtrl, passwordCtrl;
+  Authentication _authentication = Authentication();
+  FocusNode? email;
+  FocusNode? password;
+  TextEditingController? emailCtrl, passwordCtrl;
   bool _autoValid = false;
   bool loader = false;
   final _loginForm = GlobalKey<FormState>();
@@ -40,19 +35,20 @@ class LoginState extends State<Login> {
   }
 
   login(BuildContext context) async {
-    password.unfocus();
-    email.unfocus();
+    password?.unfocus();
+    email?.unfocus();
     setState(() {
       _autoValid = true;
     });
-    if (_loginForm.currentState.validate()) {
+    if ( _loginForm.currentState!.validate()) {
       setState(() {
         loader = true;
       });
-      User u =
-          User(email: emailCtrl.value.text, password: passwordCtrl.value.text,);
+      UserModel u =
+          UserModel(email: emailCtrl!.value.text, password: passwordCtrl!.value.text,);
       try {
-        AuthResult _user = await _authentication.LoginUser(u);
+        UserCredential _user = await _authentication.LoginUser(u);
+        print("HERE");
         setState(() {
           loader = false;
         });
@@ -65,11 +61,15 @@ class LoginState extends State<Login> {
                       )),
               ModalRoute.withName('/root'));
         }
-      } on PlatformException catch (e) {
-        _authentication.ShowToast(context, _authentication.HandleError(e));
+      } on FirebaseAuthException catch (e) {
+        print(e);
         setState(() {
           loader = false;
         });
+        _authentication.ShowToast(context, _authentication.HandleError(e));
+      } catch(e)  {
+        print("ERROR #");
+        print(e);
       }
     }
   }
@@ -163,7 +163,7 @@ class LoginState extends State<Login> {
               textCapitalization: TextCapitalization.none,
               decoration: FormInputDecoration.FormInputDesign(name: "Email"),
               onFieldSubmitted: (node) {
-                email.unfocus();
+                email?.unfocus();
                 FocusScope.of(context).requestFocus(password);
               },
               validator: (value) => CheckFieldValidation(
@@ -185,7 +185,7 @@ class LoginState extends State<Login> {
               textCapitalization: TextCapitalization.none,
               decoration: FormInputDecoration.FormInputDesign(name: "Password"),
               onFieldSubmitted: (node) {
-                password.unfocus();
+                password?.unfocus();
                 login(context);
               },
               validator: (value) => CheckFieldValidation(
@@ -258,9 +258,9 @@ class LoginState extends State<Login> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    email.dispose();
-    emailCtrl.dispose();
-    password.dispose();
-    passwordCtrl.dispose();
+    email?.dispose();
+    emailCtrl?.dispose();
+    password?.dispose();
+    passwordCtrl?.dispose();
   }
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
-import 'package:testproject/Theme/CustomTextStyle.dart';
-import 'package:testproject/View/Resturant/ResturantListMapView.dart';
+import 'package:hupptest/Theme/Color.dart';
 import 'dart:ui' as ui;
+import 'ResturantListMapView.dart';
 import 'ResturantListView.dart';
 
 
@@ -20,10 +19,10 @@ class ResturantListState extends State<ResturantList> with TickerProviderStateMi
   int activeView = 0;
   EdgeInsets padding = EdgeInsets.symmetric(horizontal:10.0,vertical: 15.0);
   double fromBottom = 0;
-  Animation animation;
-  AnimationController animationController;
-  Animation offset;
-  TabController tabController;
+  late Animation animation;
+  late AnimationController animationController;
+  late Animation<Offset> offset;
+  late TabController tabController;
 
 
   @override
@@ -133,7 +132,7 @@ class ResturantListState extends State<ResturantList> with TickerProviderStateMi
                     ),
                       Container(
                       decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.grey[200]))),
+                      border: Border(bottom: BorderSide(color: Colors.grey.withOpacity(0.5)))),
                       ),
                     Expanded(
                       child: Container(

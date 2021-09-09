@@ -16,13 +16,13 @@ class Signup extends StatefulWidget {
 }
 
 class SignupState extends State<Signup> {
-  Authentication _authentication;
-  FocusNode username;
-  FocusNode email;
-  FocusNode password;
-  FocusNode confirmPassword;
+  Authentication _authentication = Authentication();
+  FocusNode? username;
+  FocusNode? email;
+  FocusNode? password;
+  FocusNode? confirmPassword;
 
-  TextEditingController emailCtrl, passwordCtrl, usernameCtrl, cpasswordCtrl;
+  TextEditingController? emailCtrl, passwordCtrl, usernameCtrl, cpasswordCtrl;
 
   final _formKey = GlobalKey<FormState>();
   bool _autoValid = false;
@@ -64,21 +64,21 @@ class SignupState extends State<Signup> {
   }
 
   signup(BuildContext context) async {
-    email.unfocus();
-    password.unfocus();
-    username.unfocus();
-    confirmPassword.unfocus();
+    email?.unfocus();
+    password?.unfocus();
+    username?.unfocus();
+    confirmPassword?.unfocus();
 
     setState(() => _autoValid = true);
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       try {
         setState(() {
           loader = true;
         });
         print("SUCCESS");
-        User u = User(
-            email: emailCtrl.value.text, password: passwordCtrl.value.text);
-        AuthResult _user = await _authentication.SingupUser(u);
+        UserModel u = UserModel(
+            email: emailCtrl!.value.text, password: passwordCtrl!.value.text);
+        UserCredential _user = await _authentication.SingupUser(u);
         print(_user);
         if (_user != null) {
           Navigator.pushAndRemoveUntil(
@@ -142,7 +142,7 @@ class SignupState extends State<Signup> {
               textCapitalization: TextCapitalization.none,
               decoration: FormInputDecoration.FormInputDesign(name: "Username"),
               onFieldSubmitted: (node) {
-                username.unfocus();
+                username!.unfocus();
                 FocusScope.of(context).requestFocus(email);
               },
               validator: (value) => CheckFieldValidation(
@@ -165,7 +165,7 @@ class SignupState extends State<Signup> {
               decoration:
                   FormInputDecoration.FormInputDesign(name: "Email Address"),
               onFieldSubmitted: (node) {
-                email.unfocus();
+                email!.unfocus();
                 FocusScope.of(context).requestFocus(password);
               },
               validator: (value) => CheckFieldValidation(
@@ -187,7 +187,7 @@ class SignupState extends State<Signup> {
               textCapitalization: TextCapitalization.none,
               decoration: FormInputDecoration.FormInputDesign(name: "Password"),
               onFieldSubmitted: (node) {
-                password.unfocus();
+                password!.unfocus();
                 FocusScope.of(context).requestFocus(confirmPassword);
               },
               validator: (value) => CheckFieldValidation(
@@ -210,12 +210,12 @@ class SignupState extends State<Signup> {
               decoration:
                   FormInputDecoration.FormInputDesign(name: "Confirm password"),
               onFieldSubmitted: (node) {
-                confirmPassword.unfocus();
+                confirmPassword!.unfocus();
                 signup(context);
               },
               validator: (value) => CheckFieldValidation(
                   val: value,
-                  password: passwordCtrl.value.text,
+                  password: passwordCtrl!.value.text,
                   fieldName: "Confirm password",
                   fieldType: VALIDATION_TYPE.CONFIRM_PASSWORD),
             ),

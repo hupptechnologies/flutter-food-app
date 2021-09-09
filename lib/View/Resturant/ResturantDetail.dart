@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:testproject/Theme/Color.dart';
-import 'package:testproject/Theme/CustomTextStyle.dart';
-import 'package:testproject/View/Resturant/MenuView.dart';
-import 'package:testproject/View/Resturant/PlaceDetailsView.dart';
-import 'package:testproject/View/Resturant/PlaceReviewView.dart';
-import 'package:testproject/Widgets/CustomOutlineButton.dart';
+import 'package:hupptest/Theme/Color.dart';
+import 'package:hupptest/Theme/CustomTextStyle.dart';
+import 'package:hupptest/Widgets/CustomOutlineButton.dart';
+
+import 'MenuView.dart';
+import 'PlaceDetailsView.dart';
+import 'PlaceReviewView.dart';
 
 class ResturantDetail extends StatefulWidget{
-  int index;
-  String image;
-  String title;
+  final int index;
+  final String image;
+  final String title;
 
-
-  ResturantDetail({this.index,this.image,this.title});
+  ResturantDetail({required this.index,required this.image,required this.title});
 
   @override
   State<StatefulWidget> createState() {
@@ -23,7 +23,7 @@ class ResturantDetail extends StatefulWidget{
 
 class ResturantDetailState extends State<ResturantDetail> with SingleTickerProviderStateMixin{
 
-  TabController tabController;
+  late TabController tabController;
 
   @override
   void initState() {
@@ -78,9 +78,9 @@ class ResturantDetailState extends State<ResturantDetail> with SingleTickerProvi
 }
 
 class DetailTabView extends StatelessWidget{
-  TabController tabController;
+  final TabController tabController;
 
-  DetailTabView({this.tabController});
+  DetailTabView({required this.tabController});
 
   @override
   Widget build(BuildContext context) {

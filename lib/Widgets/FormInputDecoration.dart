@@ -5,7 +5,7 @@ class FormInputDecoration extends InputDecoration {
     * Input field border design
     * @param string : Placeholder name
     * */
-  static FormInputDesign({String name, String errorText}) {
+  static FormInputDesign({String? name, String? errorText}) {
     return InputDecoration(
         contentPadding:
             EdgeInsets.only(top: 12, bottom: 12, left: 10, right: 10),
@@ -21,7 +21,7 @@ class FormInputDecoration extends InputDecoration {
         fillColor: Colors.grey[100],
         hintStyle: TextStyle(letterSpacing: 1.2, color: Colors.grey[500]),
         errorMaxLines: 3,
-        hintText: (name).toUpperCase(),
+        hintText: (name!).toUpperCase(),
         errorStyle: TextStyle(
             letterSpacing: 1.2, decorationStyle: TextDecorationStyle.dashed));
   }

@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'dart:io';
 
 class Authentication {
-  Future<AuthResult> SingupUser(User user) async {
+  Future<UserCredential> SingupUser(UserModel user) async {
 
     return await FirebaseAuth.instance.createUserWithEmailAndPassword(email: user.email, password: user.password);
   }
 
-  Future<AuthResult> LoginUser(User user) async {
+  Future<UserCredential> LoginUser(UserModel user) async {
     return await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: user.email, password: user.password);
   }
@@ -24,7 +24,7 @@ class Authentication {
   }
 
   HandleError(e) {
-    String errorType;
+    String? errorType;
 
     if (Platform.isAndroid) {
       switch (e.message) {
