@@ -6,7 +6,6 @@ import '../../Modal/Validation.dart';
 import '../../Widgets/Loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../Modal/User.dart';
-import 'dart:io';
 import 'package:flutter/services.dart';
 import '../Welcome/Welcome.dart';
 import '../../Modal/Authentication.dart';
@@ -27,7 +26,6 @@ class SignupState extends State<Signup> {
   final _formKey = GlobalKey<FormState>();
   bool _autoValid = false;
   bool loader = false;
-
 
   @override
   void initState() {
@@ -79,17 +77,15 @@ class SignupState extends State<Signup> {
         UserModel u = UserModel(
             email: emailCtrl!.value.text, password: passwordCtrl!.value.text);
         UserCredential _user = await _authentication.SingupUser(u);
-        print(_user);
-        if (_user != null) {
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => Welcome(
-                      user:_user.user,
-                    ),
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => Welcome(
+                user: _user.user,
               ),
-              ModalRoute.withName('/root'));
-        }
+            ),
+            ModalRoute.withName('/root'));
+
         setState(() {
           loader = false;
         });
@@ -121,7 +117,8 @@ class SignupState extends State<Signup> {
     return SingleChildScrollView(
         child: Form(
       key: _formKey,
-      autovalidate: _autoValid,
+      autovalidateMode:
+          _autoValid ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(

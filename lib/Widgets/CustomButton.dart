@@ -20,11 +20,13 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return FlatButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(22.0),
-      ),
-      padding: EdgeInsets.all(0.0),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          onPrimary: color,
+          padding: EdgeInsets.all(0.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(22.0),
+          )),
       onPressed: onPressed,
       child: Container(
         width: (width != null ? width : double.infinity),

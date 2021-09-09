@@ -40,34 +40,34 @@ class LoginState extends State<Login> {
     setState(() {
       _autoValid = true;
     });
-    if ( _loginForm.currentState!.validate()) {
+    if (_loginForm.currentState!.validate()) {
       setState(() {
         loader = true;
       });
-      UserModel u =
-          UserModel(email: emailCtrl!.value.text, password: passwordCtrl!.value.text,);
+      UserModel u = UserModel(
+        email: emailCtrl!.value.text,
+        password: passwordCtrl!.value.text,
+      );
       try {
-        UserCredential _user = await _authentication.LoginUser(u);
+        UserCredential? _user = await _authentication.LoginUser(u);
         print("HERE");
         setState(() {
           loader = false;
         });
-        if (_user != null) {
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => Welcome(
-                        user: _user.user,
-                      )),
-              ModalRoute.withName('/root'));
-        }
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => Welcome(
+                      user: _user.user,
+                    )),
+            ModalRoute.withName('/root'));
       } on FirebaseAuthException catch (e) {
         print(e);
         setState(() {
           loader = false;
         });
         _authentication.ShowToast(context, _authentication.HandleError(e));
-      } catch(e)  {
+      } catch (e) {
         print("ERROR #");
         print(e);
       }
@@ -141,7 +141,8 @@ class LoginState extends State<Login> {
     return SingleChildScrollView(
         child: Form(
       key: _loginForm,
-      autovalidate: _autoValid,
+      autovalidateMode:
+          _autoValid ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.0),
         child: Column(

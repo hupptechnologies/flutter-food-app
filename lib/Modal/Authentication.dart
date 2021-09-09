@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'User.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:io';
 
 class Authentication {
@@ -20,7 +19,7 @@ class Authentication {
   }
 
   ShowToast(BuildContext context, String message) {
-    Scaffold.of(context).showSnackBar(new SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context).showSnackBar(new SnackBar(content: Text(message)));
   }
 
   HandleError(e) {

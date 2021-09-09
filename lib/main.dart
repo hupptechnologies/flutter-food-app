@@ -24,8 +24,8 @@ class MainPage extends StatelessWidget {
         ),
         primarySwatch: Colors.green,
         primaryTextTheme: TextTheme(
-          title: TextStyle(
-            color: Colors.white
+          headline6: TextStyle(
+              color: Colors.white
           ),
 
         ),

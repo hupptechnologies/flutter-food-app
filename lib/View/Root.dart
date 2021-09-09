@@ -37,7 +37,7 @@ class RootState extends State<Root> {
         });
       }
     } catch (e) {
-      print("ERROR IN LAUNCH ${e}");
+      print("ERROR IN LAUNCH $e");
     }
   }
 
@@ -45,6 +45,5 @@ class RootState extends State<Root> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(body: launchWidget);
-    ;
   }
 }
