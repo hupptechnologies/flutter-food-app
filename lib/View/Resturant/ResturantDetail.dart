@@ -7,21 +7,20 @@ import 'MenuView.dart';
 import 'PlaceDetailsView.dart';
 import 'PlaceReviewView.dart';
 
-class ResturantDetail extends StatefulWidget{
+class RestaurantDetail extends StatefulWidget{
   final int index;
   final String image;
   final String title;
 
-  ResturantDetail({required this.index,required this.image,required this.title});
+  RestaurantDetail({required this.index,required this.image,required this.title});
 
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return ResturantDetailState();
+    return RestaurantDetailState();
   }
 }
 
-class ResturantDetailState extends State<ResturantDetail> with SingleTickerProviderStateMixin{
+class RestaurantDetailState extends State<RestaurantDetail> with SingleTickerProviderStateMixin{
 
   late TabController tabController;
 

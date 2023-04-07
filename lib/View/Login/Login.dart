@@ -105,11 +105,11 @@ class LoginState extends State<Login> {
                     TextFormField(
                       obscureText: true,
                       textInputAction: TextInputAction.done,
-                      style: FormInputDecoration.CustomTextStyle(),
+                      style: FormInputDecoration.customTextStyle(),
                       textAlign: TextAlign.center,
                       textCapitalization: TextCapitalization.none,
                       decoration:
-                          FormInputDecoration.FormInputDesign(name: "Password"),
+                          FormInputDecoration.formInputDesign(name: "Password"),
                     )
                   ],
                 ),
@@ -122,7 +122,6 @@ class LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: SafeArea(child: Builder(
         builder: (context) {
@@ -159,10 +158,10 @@ class LoginState extends State<Login> {
               controller: emailCtrl,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
-              decoration: FormInputDecoration.FormInputDesign(name: "Email"),
+              decoration: FormInputDecoration.formInputDesign(name: "Email"),
               onFieldSubmitted: (node) {
                 email?.unfocus();
                 FocusScope.of(context).requestFocus(password);
@@ -181,10 +180,10 @@ class LoginState extends State<Login> {
               focusNode: password,
               obscureText: true,
               textInputAction: TextInputAction.done,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
-              decoration: FormInputDecoration.FormInputDesign(name: "Password"),
+              decoration: FormInputDecoration.formInputDesign(name: "Password"),
               onFieldSubmitted: (node) {
                 password?.unfocus();
                 login(context);

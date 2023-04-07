@@ -14,7 +14,6 @@ void main() async{
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       theme: ThemeData(
         fontFamily: "RalewatMedium",
@@ -36,7 +35,9 @@ class MainPage extends StatelessWidget {
       title: "Foody",
       home: Root(),
       debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{'/root': (context) => Root()},
+      routes: <String, WidgetBuilder>{
+        '/root': (context) => Root(),
+      },
     );
   }
 }

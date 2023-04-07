@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+///  @param [onPressed] button press event
+///  @param [text] button name
+///  @param [borderColor] button border color
+///  @param [textStyle] button text style
+///  @param [padding] custom padding inside button
 class CustomOutlineButton extends StatelessWidget {
   final GestureTapCallback? onPressed;
   final String text;
@@ -8,13 +13,14 @@ class CustomOutlineButton extends StatelessWidget {
   final TextStyle? textStyle;
   final EdgeInsets? padding;
 
-  CustomOutlineButton(
-      {this.onPressed,
-      required this.text,
-      this.highlightColor,
-      required this.borderColor,
-      this.textStyle,
-      this.padding});
+  CustomOutlineButton({
+    this.onPressed,
+    required this.text,
+    this.highlightColor,
+    required this.borderColor,
+    this.textStyle,
+    this.padding,
+  });
 
   @override
   Widget build(BuildContext context) {

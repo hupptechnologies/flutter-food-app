@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+///  @param [height] divider height
+///  @param [color] divider color
 class CustomDivider extends StatelessWidget {
   final double? height;
   final Color color;
@@ -8,7 +11,6 @@ class CustomDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       height: height,
       decoration: BoxDecoration(

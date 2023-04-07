@@ -8,10 +8,9 @@ import 'ResturantDetail.dart';
 
 String image = 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
 
-class ResturantListView extends StatelessWidget{
+class RestaurantListView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return LayoutBuilder(
       builder: (context,constraint){
 
@@ -24,7 +23,7 @@ class ResturantListView extends StatelessWidget{
               onTap: (){
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ResturantDetail(index: index,image: image,title: "Burger",),
+                    MaterialPageRoute(builder: (context) => RestaurantDetail(index: index,image: image,title: "Burger",),
                     ),
                 );
               },

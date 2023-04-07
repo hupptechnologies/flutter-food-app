@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hupptest/Widgets/CustomDivider.dart';
 import 'package:hupptest/Widgets/CustomRatingBar.dart';
 

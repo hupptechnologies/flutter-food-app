@@ -5,16 +5,14 @@ import 'ResturantListMapView.dart';
 import 'ResturantListView.dart';
 
 
-class ResturantList extends StatefulWidget{
+class RestaurantList extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return ResturantListState();
+    return RestaurantListState();
   }
 }
 
-class ResturantListState extends State<ResturantList> with TickerProviderStateMixin{
-
+class RestaurantListState extends State<RestaurantList> with TickerProviderStateMixin{
 
   int activeView = 0;
   EdgeInsets padding = EdgeInsets.symmetric(horizontal:10.0,vertical: 15.0);
@@ -75,8 +73,8 @@ class ResturantListState extends State<ResturantList> with TickerProviderStateMi
                 child: TabBarView(
                   controller: tabController,
                   children: <Widget>[
-                    ResturantListView(),
-                    ResturantMapView()
+                    RestaurantListView(),
+                    RestaurantMapView()
                   ],
                 ),
               )

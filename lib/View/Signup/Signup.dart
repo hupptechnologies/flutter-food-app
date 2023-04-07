@@ -100,7 +100,6 @@ class SignupState extends State<Signup> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(child: Builder(builder: (context) {
@@ -134,10 +133,10 @@ class SignupState extends State<Signup> {
               controller: usernameCtrl,
               textInputAction: TextInputAction.next,
               focusNode: username,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
-              decoration: FormInputDecoration.FormInputDesign(name: "Username"),
+              decoration: FormInputDecoration.formInputDesign(name: "Username"),
               onFieldSubmitted: (node) {
                 username!.unfocus();
                 FocusScope.of(context).requestFocus(email);
@@ -156,11 +155,11 @@ class SignupState extends State<Signup> {
               keyboardType: TextInputType.emailAddress,
               focusNode: email,
               textInputAction: TextInputAction.next,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
               decoration:
-                  FormInputDecoration.FormInputDesign(name: "Email Address"),
+                  FormInputDecoration.formInputDesign(name: "Email Address"),
               onFieldSubmitted: (node) {
                 email!.unfocus();
                 FocusScope.of(context).requestFocus(password);
@@ -179,10 +178,10 @@ class SignupState extends State<Signup> {
               textInputAction: TextInputAction.next,
               focusNode: password,
               obscureText: true,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
-              decoration: FormInputDecoration.FormInputDesign(name: "Password"),
+              decoration: FormInputDecoration.formInputDesign(name: "Password"),
               onFieldSubmitted: (node) {
                 password!.unfocus();
                 FocusScope.of(context).requestFocus(confirmPassword);
@@ -201,11 +200,11 @@ class SignupState extends State<Signup> {
               textInputAction: TextInputAction.done,
               focusNode: confirmPassword,
               obscureText: true,
-              style: FormInputDecoration.CustomTextStyle(),
+              style: FormInputDecoration.customTextStyle(),
               textAlign: TextAlign.center,
               textCapitalization: TextCapitalization.none,
               decoration:
-                  FormInputDecoration.FormInputDesign(name: "Confirm password"),
+                  FormInputDecoration.formInputDesign(name: "Confirm password"),
               onFieldSubmitted: (node) {
                 confirmPassword!.unfocus();
                 signup(context);

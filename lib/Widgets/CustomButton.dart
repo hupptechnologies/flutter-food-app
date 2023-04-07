@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-/**
- *  @param text   - string datatype  : Button text anme
- *  @param color  - Color class      : Button Color
- *  @param width  - double datatype  : Button width   ( default full width )
- * */
+///  @param [text] button text name
+///  @param [color] button name
+///  @param [width] button width.(Default full width)
 class CustomButton extends StatelessWidget {
   final String text;
   final Color color;
@@ -19,7 +17,6 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           onPrimary: color,

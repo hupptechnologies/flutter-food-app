@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class PageHeader extends StatelessWidget {
   final String title;
 
-  PageHeader({required this.title});
+  PageHeader({
+    required this.title
+  });
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.only(top: 0.0),
       child: Row(
@@ -17,7 +18,8 @@ class PageHeader extends StatelessWidget {
             onTap: () {
               FocusScope.of(context).requestFocus(new FocusNode());
               Future.delayed(
-                  Duration(milliseconds: 100), () => Navigator.pop(context));
+                  Duration(milliseconds: 100), () => Navigator.pop(context),
+              );
             },
             child: Icon(
               Icons.keyboard_backspace,

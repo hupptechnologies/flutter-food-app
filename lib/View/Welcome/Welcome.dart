@@ -42,7 +42,7 @@ class Welcome extends StatelessWidget {
         ],
       ),
       drawer: drawer(),
-      body: ResturantList(),
+      body: RestaurantList(),
     );
   }
 

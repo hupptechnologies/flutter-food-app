@@ -10,14 +10,5 @@ class CustomRatingBar extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container();
-    // return RatingBar(
-    //   emptyIcon: Icons.star,
-    //   filledIcon: Icons.star,
-    //   filledColor: Colors.amberAccent,
-    //   maxRating: 5,
-    //   onRatingChanged: (val){},
-    //   size: 20,
-    //   initialRating: size,
-    // );
   }
 }
